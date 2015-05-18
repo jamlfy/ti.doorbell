@@ -1,46 +1,4 @@
-Appcelerator Titanium Mobile Module Project
-===========================================
-
-This is a skeleton Titanium Mobile Mobile module project.
-
-
-MODULE NAMING
--------------
-
-Choose a unique module id for your module.  This ID usually follows a namespace
-convention using DNS notation.  For example, com.appcelerator.module.test.  This
-ID can only be used once by all public modules in Titanium.
-
-
-GET STARTED
-------------
-
-1. Edit manifest with the appropriate details about your module.
-2. Edit LICENSE to add your license details.
-3. Place any assets (such as PNG files) that are required anywhere in the module folder.
-4. Edit the timodule.json and configure desired settings.
-5. Code and build.
-
-
-DOCUMENTATION FOR YOUR MODULE
------------------------------
-
-You should provide at least minimal documentation for your module in `documentation` folder using the Markdown syntax.
-
-For more information on the Markdown syntax, refer to this documentation at:
-
-<http://daringfireball.net/projects/markdown/>
-
-
-TEST HARNESS EXAMPLE FOR YOUR MODULE
-------------------------------------
-
-The `example` directory contains a skeleton application test harness that can be
-used for testing and providing an example of usage to the users of your module.
-
-
-BUILDING YOUR MODULE
---------------------
+# ti.doorbell
 
 Simply run `titanium build --platform <name of platform> --build-type production --dir /path/to/module`.
 You can omit the --dir option if your working directory is in the module's project directory.
@@ -83,8 +41,21 @@ To use your module in code, you will need to require it.
 
 For example,
 
-	var my_module = require('ti.doorbell');
-	my_module.foo();
+	var doorbell = require('ti.doorbell');
+	var ddialog = doorbell.createDialog({
+		apiKey : '--API KEY--',
+		appId : '-- APP ID --',
+		// Optional
+		email : 'alejonext@gmail.com',
+		name : 'alejo next',
+		testing : true
+	});
+
+	dd.addProperty("username", 'alejonext');
+	dd.on('show', function(){
+		console.log('Is show');
+	});
+	dd.show();
 
 
 TESTING YOUR MODULE
@@ -92,15 +63,6 @@ TESTING YOUR MODULE
 
 To test with the script, execute:
 
-	titanium run --dir=YOURMODULEDIR
+	titanium run --dir=doorbell
 
 This will execute the app.js in the example folder as a Titanium application.
-
-
-DISTRIBUTING YOUR MODULE
--------------------------
-
-You can choose to manually distribute your module distribution zip file or through the Titanium Marketplace!
-
-
-Cheers!
