@@ -1,6 +1,6 @@
 /**
- * Copyright (c) 2011 by Studio Classics. All Rights Reserved.
- * Author: Brian Kurzius
+ * Copyright (c) 2011 by AlejoNext. All Rights Reserved.
+ * Author: Alejo Next alejonext@gmail
  * Licensed under the terms of the Apache Public License
  * Please see the LICENSE included with this distribution for details.
  */
@@ -87,7 +87,7 @@ public class View extends TiUIView {
 		}
 		if (d.containsKey("hideEmail")) {
 			Log.d(TAG, "has hideEmail: " + d.getBoolean("hideEmail"));
-			DoorbellModule.HIDEEMAIL = d.getBoolean("hideEmail"));
+			DoorbellModule.HIDEEMAIL = d.getBoolean("hideEmail");
 		}
 		if (d.containsKey("hidePoweredBy")) {
 			Log.d(TAG, "has hidePoweredBy: " + d.getBoolean("hidePoweredBy"));
@@ -134,25 +134,25 @@ public class View extends TiUIView {
 
 	public void addProperty(String prop, Boolean data)
 	{
-		Log.d(LCAT, "addProperty");
+		Log.d(TAG, "addProperty");
 		doorbellDialog.addProperty(prop, data);
 	}
 
 	public void addProperty(String prop, String data)
 	{
-		Log.d(LCAT, "addProperty");
+		Log.d(TAG, "addProperty");
 		doorbellDialog.addProperty(prop, data);
 	}
 
 	public void addProperty(String prop, Number data)
 	{
-		Log.d(LCAT, "addProperty");
+		Log.d(TAG, "addProperty");
 		doorbellDialog.addProperty(prop, data);
 	}
 
 	public void addProperty(String prop, Double data)
 	{
-		Log.d(LCAT, "addProperty");
+		Log.d(TAG, "addProperty");
 		doorbellDialog.addProperty(prop, data);
 	}
 }
